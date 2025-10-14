@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Students</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>All Students</h1>
+
+        <% if (students.length > 0) { %>
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Courses</th>
+                <th>Degree</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% students.forEach(student => { %>
+                <tr>
+                <td><%= student.name %></td>
+                <td><%= student.department %></td>
+                <td><%= student.courses.join(", ") %></td>
+                <td><%= student.degree %></td>
+                <td><%= student.age %></td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <p>No students found.</p>
+        <% } %>
+
+        <a href="/" class="link">Add New Student</a>
+    </div>
+</body>
+</html>
