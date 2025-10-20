@@ -64,7 +64,7 @@ app.post("/", async (req, res) => {
 app.get("/students", async (req, res) => {
     Student.find()
     .then((students) => {
-        res.render("students", { students });
+        res.render("students", {myTitle: "Students", students });
     })
     .catch((err) => {res.status(400).send({message: "Error View student", err })});
 });
